@@ -9,14 +9,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		for (int i = 0; i <= 80; i++) {
-			System.out.print("-");
+			System.out.print("=");
+			if (i == 80) {
+				System.out.println();
+			}
 		}
-		System.out.println("");
-		System.out.println("Selamat Datang di Sistem Penggajian Karyawan (Tugas 2 STSI4102 057528135)");
+		System.out.println(
+				"Selamat Datang di Sistem Penggajian Karyawan V.2 (Array + Method) (Tugas 3 STSI4102 057528135)");
 		for (int i = 0; i <= 80; i++) {
-			System.out.print("-");
+			System.out.print("=");
+			if (i == 80) {
+				System.out.println();
+			}
 		}
-		System.out.println();
 		panduan();
 		System.out.println();
 		proses();

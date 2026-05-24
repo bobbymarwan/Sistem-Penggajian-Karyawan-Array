@@ -65,14 +65,24 @@ public abstract class Karyawan {
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 
-		sb.append("==========================================================\n");
-		sb.append("              DETAIL INFO ARRAY & HASIL GAJI              \n");
-		sb.append("==========================================================\n");
+		for (int i = 0; i <= 80; i++) {
+			sb.append("=");
+			if (i == 80) {
+				sb.append("\n");
+			}
+		}
+		sb.append("DETAIL INFO ARRAY & HASIL GAJI\n");
+		for (int i = 0; i <= 80; i++) {
+			sb.append("=");
+			if (i == 80) {
+				sb.append("\n");
+			}
+		}
 
 		sb.append("\n--- Array Golongan ---\n");
 		sb.append("golongans = ").append(Arrays.toString(golongans)).append("\n");
 		for (int i = 0; i < golongans.length; i++) {
-			sb.append("  golongans[").append(i).append("] = \"").append(golongans[i]).append("\"\n");
+			sb.append("golongans[").append(i).append("] = \"").append(golongans[i]).append("\"\n");
 		}
 
 		sb.append("\n--- Array Gaji ---\n");
@@ -84,43 +94,51 @@ public abstract class Karyawan {
 		}
 		sb.append("]\n");
 		for (int i = 0; i < gajis.length; i++) {
-			sb.append("  gajis[").append(i).append("] = ").append(Helper.formatRupiah(gajis[i]));
+			sb.append("gajis[").append(i).append("] = ").append(Helper.formatRupiah(gajis[i]));
 			sb.append(" (Golongan ").append(golongans[i]).append(")\n");
 		}
 
 		sb.append("\n--- Array Persen Lembur ---\n");
 		sb.append("persenLemburs = ").append(Arrays.toString(persenLemburs)).append("\n");
 		for (int i = 0; i < persenLemburs.length; i++) {
-			sb.append("  persenLemburs[").append(i).append("] = ").append(persenLemburs[i]).append("%");
+			sb.append("persenLemburs[").append(i).append("] = ").append(persenLemburs[i]).append("%");
 			sb.append(" (Lembur ").append(i + 1);
 			if (i == persenLemburs.length - 1)
 				sb.append("+");
 			sb.append(" Jam)\n");
 		}
 
-		sb.append("\n==========================================================\n");
-		sb.append("              HASIL PERHITUNGAN GAJI KARYAWAN             \n");
-		sb.append("==========================================================\n");
-		sb.append("Golongan           : ").append(golongan()).append("\n");
-		sb.append("Gaji Pokok         : ").append(Helper.formatRupiah(gajiPokok())).append("\n");
-		sb.append("Jumlah Jam Lembur  : ").append((int) getJamLembur()).append(" Jam\n");
+		for (int i = 0; i <= 80; i++) {
+			sb.append("=");
+			if (i == 80) {
+				sb.append("\n");
+			}
+		}
+		sb.append("HASIL PERHITUNGAN GAJI KARYAWAN\n");
+		for (int i = 0; i <= 80; i++) {
+			sb.append("=");
+			if (i == 80) {
+				sb.append("\n");
+			}
+		}
+		sb.append("Golongan : ").append(golongan()).append("\n");
+		sb.append("Gaji Pokok : ").append(Helper.formatRupiah(gajiPokok())).append("\n");
+		sb.append("Jumlah Jam Lembur : ").append((int) getJamLembur()).append(" Jam\n");
 
 		int indexLembur = getIndexPersenLembur(getJamLembur());
 		if (indexLembur >= 0) {
-			sb.append("Persen Lembur      : persenLemburs[").append(indexLembur).append("] = ");
+			sb.append("Persen Lembur : persenLemburs[").append(indexLembur).append("] = ");
 			sb.append(persenLemburs[indexLembur]).append("% dari Gaji Pokok\n");
 			sb.append("Perhitungan Lembur : ").append(persenLemburs[indexLembur]).append("% x ");
 			sb.append(Helper.formatRupiah(gajiPokok())).append(" = ");
 			sb.append(Helper.formatRupiah(getGajiLembur())).append("\n");
 		} else {
-			sb.append("Persen Lembur      : 0% (Tidak Lembur)\n");
-			sb.append("Gaji Lembur        : ").append(Helper.formatRupiah(0)).append("\n");
+			sb.append("Persen Lembur : 0% (Tidak Lembur)\n");
+			sb.append("Gaji Lembur : ").append(Helper.formatRupiah(0)).append("\n");
 		}
 
-		sb.append("Gaji Lembur        : ").append(Helper.formatRupiah(getGajiLembur())).append("\n");
-		sb.append("----------------------------------------------------------\n");
-		sb.append("Total Penghasilan  : ").append(Helper.formatRupiah(jumlahGaji())).append("\n");
-		sb.append("==========================================================");
+		sb.append("Gaji Lembur : ").append(Helper.formatRupiah(getGajiLembur())).append("\n");
+		sb.append("Total Penghasilan : ").append(Helper.formatRupiah(jumlahGaji())).append("\n");
 
 		return sb.toString();
 	}
