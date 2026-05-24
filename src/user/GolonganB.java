@@ -6,12 +6,12 @@ public class GolonganB extends Karyawan {
 
 	@Override
 	protected float gajiPokok() {
-		return 6500000;
+		return gajis[1];
 	}
 
 	@Override
 	protected String golongan() {
-		return "B";
+		return golongans[1];
 	}
-	
+
 }

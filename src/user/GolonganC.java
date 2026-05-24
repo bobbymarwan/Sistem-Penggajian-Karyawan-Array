@@ -5,13 +5,12 @@ import util.Helper;
 public class GolonganC extends Karyawan {
 	@Override
 	protected float gajiPokok() {
-		return 9500000;
+		return gajis[2];
 	}
-	
 
 	@Override
 	protected String golongan() {
-		return "C";
+		return golongans[2];
 	}
 
 }
